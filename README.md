@@ -368,6 +368,22 @@ melody and bass, polyphonic harmony,
 eight-bar rhythm and the final D4. It also checks chunk sizes, note balance
 and end-of-track events. Invalid files produce a `FAIL` message and exit code 1.
 
+## Build the documentation as PDF
+
+The README is the documentation source. Build a PDF directly with Pandoc and
+Typst, without LaTeX or a separate documentation directory:
+
+```sh
+brew install pandoc typst
+make pdf
+open build/FractalMidiGen.pdf
+```
+
+The PDF includes a table of contents, numbered sections, tables, formulas and
+clickable links. `make pdf` rebuilds it when README.md or the Makefile changes.
+`make clean` removes the PDF along with the program's build files. Override
+the executables with `PANDOC=...` or `TYPST=...` if needed.
+
 ## Code organisation and attribution
 
 | File | Responsibility |
